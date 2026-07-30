@@ -1,0 +1,6 @@
+{
+  "name": "Bilal Nainia Portfolio",
+  "description": "Premium personal portfolio for Bilal Nainia, Full Stack Developer & AI Prompt Engineer.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
