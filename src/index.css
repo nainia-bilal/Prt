@@ -8,10 +8,31 @@
   --color-brand-light: #c084fc;
   --color-brand-dark: #581c87;
   
-  --color-background: #000000;
-  --color-surface: #0a0a0a;
-  --color-surface-hover: #171717;
-  --color-surface-border: #262626;
+  --color-background: var(--theme-bg);
+  --color-surface: var(--theme-surface);
+  --color-surface-hover: var(--theme-surface-hover);
+  --color-surface-border: var(--theme-surface-border);
+
+  --color-white: var(--theme-white);
+  --color-black: var(--theme-black);
+}
+
+:root {
+  --theme-bg: #000000;
+  --theme-surface: #0a0a0a;
+  --theme-surface-hover: #171717;
+  --theme-surface-border: #262626;
+  --theme-white: #ffffff;
+  --theme-black: #000000;
+}
+
+:root.light {
+  --theme-bg: #f8fafc;
+  --theme-surface: #ffffff;
+  --theme-surface-hover: #f1f5f9;
+  --theme-surface-border: #e2e8f0;
+  --theme-white: #0f172a;
+  --theme-black: #ffffff;
 }
 
 @layer utilities {

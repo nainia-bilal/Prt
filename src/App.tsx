@@ -10,6 +10,8 @@ import { Experience } from "./components/Experience";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 
+import { ThemeProvider } from "./components/ThemeProvider";
+
 export default function App() {
   useEffect(() => {
     const lenis = new Lenis({
@@ -22,30 +24,35 @@ export default function App() {
       touchMultiplier: 2,
     });
 
+    let rafId: number;
+
     function raf(time: number) {
       lenis.raf(time);
-      requestAnimationFrame(raf);
+      rafId = requestAnimationFrame(raf);
     }
 
-    requestAnimationFrame(raf);
+    rafId = requestAnimationFrame(raf);
 
     return () => {
+      cancelAnimationFrame(rafId);
       lenis.destroy();
     };
   }, []);
 
   return (
-    <main className="bg-background min-h-screen text-white font-sans selection:bg-brand-light/30 selection:text-white">
-      <CustomCursor />
-      <Navigation />
-      
-      <Hero />
-      <About />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Contact />
-      <Footer />
-    </main>
+    <ThemeProvider>
+      <main className="bg-background min-h-screen text-white font-sans selection:bg-brand-light/30 selection:text-white transition-colors duration-500">
+        <CustomCursor />
+        <Navigation />
+        
+        <Hero />
+        <About />
+        <Skills />
+        <Experience />
+        <Projects />
+        <Contact />
+        <Footer />
+      </main>
+    </ThemeProvider>
   );
 }

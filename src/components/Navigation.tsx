@@ -1,15 +1,16 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { cn } from "../lib/utils";
-import { Home, User, Briefcase, Code, Mail, LayoutTemplate } from "lucide-react";
+import { Home, User, Briefcase, Code, Mail, LayoutTemplate, GraduationCap } from "lucide-react";
+import { BRAND } from "../data";
+import { ThemeToggle } from "./ThemeToggle";
 
 const navItems = [
   { id: "hero", label: "Home", icon: Home },
-  { id: "about", label: "About", icon: User },
-  { id: "skills", label: "Skills", icon: Code },
-  { id: "projects", label: "Projects", icon: LayoutTemplate },
-  { id: "experience", label: "Experience", icon: Briefcase },
-  { id: "contact", label: "Contact", icon: Mail },
+  { id: "about", label: "Story", icon: User },
+  { id: "skills", label: "Capabilities", icon: Code },
+  { id: "experience", label: "Journey", icon: Briefcase },
+  { id: "projects", label: "Selected Work", icon: LayoutTemplate },
 ];
 
 export const Navigation = () => {
@@ -91,16 +92,28 @@ export const Navigation = () => {
               );
             })}
           </div>
-          {!isScrolled && (
-            <button 
-              onClick={() => scrollTo('contact')}
-              className="px-5 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-white/90 transition-colors"
-            >
-              Let's Talk
-            </button>
+          {!isScrolled ? (
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+              <button 
+                onClick={() => scrollTo('contact')}
+                className="px-5 py-2 text-sm font-medium text-black bg-white rounded-full hover:bg-white/90 transition-colors"
+              >
+                Let's Talk
+              </button>
+            </div>
+          ) : (
+            <div className="pl-2">
+              <ThemeToggle />
+            </div>
           )}
         </div>
       </motion.div>
+
+      {/* Mobile Theme Toggle */}
+      <div className="fixed top-6 right-6 z-50 md:hidden">
+        <ThemeToggle />
+      </div>
 
       {/* Mobile Navigation (Apple Dock inspired) */}
       <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50 md:hidden w-[90%] max-w-sm">

@@ -1,7 +1,48 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
 import { BRAND } from "../data";
 import { cn } from "../lib/utils";
+import { useTheme } from "./ThemeProvider";
+import { IconCloud } from "./IconCloud";
+
+const slugs = [
+  "typescript",
+  "javascript",
+  "dart",
+  "java",
+  "react",
+  "flutter",
+  "android",
+  "html5",
+  "css3",
+  "nodedotjs",
+  "express",
+  "nextdotjs",
+  "prisma",
+  "amazonaws",
+  "postgresql",
+  "firebase",
+  "nginx",
+  "vercel",
+  "testinglibrary",
+  "jest",
+  "cypress",
+  "docker",
+  "git",
+  "jira",
+  "github",
+  "gitlab",
+  "visualstudiocode",
+  "androidstudio",
+  "sonarqube",
+  "figma",
+];
+
+declare global {
+  interface Window {
+    VANTA: any;
+  }
+}
 
 const FloatingCard = ({ title, className, delay, dotColor = "bg-blue-400" }: { title: string, className?: string, delay: number, dotColor?: string }) => (
   <motion.div
@@ -25,6 +66,48 @@ const FloatingCard = ({ title, className, delay, dotColor = "bg-blue-400" }: { t
 
 export const Hero = () => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const vantaRef = useRef<HTMLDivElement>(null);
+  const [vantaEffect, setVantaEffect] = useState<any>(null);
+  const { theme } = useTheme();
+
+  useEffect(() => {
+    if (!vantaEffect && window.VANTA && vantaRef.current) {
+      setVantaEffect(
+        window.VANTA.NET({
+          el: vantaRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.00,
+          minWidth: 200.00,
+          scale: 1.00,
+          scaleMobile: 1.00,
+          color: 0xc084fc, // brand-light
+          backgroundColor: theme === "dark" ? 0x000000 : 0xf8fafc,
+          points: 12.00,
+          maxDistance: 22.00,
+          spacing: 18.00
+        })
+      );
+    }
+    
+    // Update options if effect exists and theme changes
+    if (vantaEffect) {
+      vantaEffect.setOptions({
+        backgroundColor: theme === "dark" ? 0x000000 : 0xf8fafc
+      });
+    }
+  }, [vantaEffect, theme]);
+
+  // Handle unmount destruction
+  useEffect(() => {
+    return () => {
+      if (vantaEffect) {
+        vantaEffect.destroy();
+      }
+    };
+  }, [vantaEffect]);
+
   const { scrollY } = useScroll();
   const y1 = useTransform(scrollY, [0, 1000], [0, 200]);
   const y2 = useTransform(scrollY, [0, 1000], [0, -100]);
@@ -36,17 +119,19 @@ export const Hero = () => {
       ref={containerRef}
       className="relative min-h-[100svh] flex items-center justify-center overflow-hidden pt-20"
     >
-      <div className="aurora-bg" />
+      {/* Vanta Background Container */}
+      <div ref={vantaRef} className="absolute inset-0 w-full h-full -z-10 opacity-60" />
+      <div className="aurora-bg opacity-40" />
       
       {/* Mesh Gradient Overlay */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-brand-dark/20 via-black/0 to-black/0 mix-blend-screen pointer-events-none" />
 
-      <div className="container relative z-10 mx-auto px-6 h-full flex flex-col lg:flex-row items-center justify-center gap-12 lg:gap-20">
+      <div className="container relative z-10 mx-auto px-6 h-full flex flex-col-reverse lg:flex-row items-center justify-center gap-12 lg:gap-20">
         
         {/* Text Content */}
         <motion.div 
           style={{ y: y1, opacity }}
-          className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-20 mt-10 lg:mt-0"
+          className="flex-1 flex flex-col items-center lg:items-start text-center lg:text-left z-20"
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.5, y: 20 }}
@@ -125,7 +210,7 @@ export const Hero = () => {
         {/* Visual Content (Animated Avatar Region) */}
         <motion.div 
           style={{ y: y2, opacity }}
-          className="flex-1 relative w-full max-w-md aspect-square lg:aspect-[4/5] flex items-center justify-center mt-12 lg:mt-0"
+          className="flex-1 relative w-full max-w-md aspect-square lg:aspect-[4/5] flex items-center justify-center"
         >
           {/* Central Holographic Container */}
           <motion.div 
@@ -149,22 +234,10 @@ export const Hero = () => {
             <div className="absolute w-full h-full border-2 border-dashed border-white/20 rounded-full animate-[spin_30s_linear_infinite]" />
             <div className="absolute w-[80%] h-[80%] border-2 border-dotted border-purple-400/30 rounded-full animate-[spin_20s_linear_reverse_infinite]" />
             
-            {/* Avatar Core */}
-            <motion.div 
-              whileHover={{ scale: 1.05 }}
-              transition={{ type: "spring", bounce: 0.5 }}
-              className="relative z-10 w-52 h-52 lg:w-60 lg:h-60 rounded-full bg-zinc-900 border-4 border-white/10 overflow-hidden shadow-2xl shadow-purple-500/30 group cursor-pointer"
-            >
-              <div className="absolute inset-0 bg-gradient-to-tr from-purple-600/40 to-transparent opacity-50 group-hover:opacity-100 transition-opacity duration-700 z-10" />
-              <motion.div 
-                className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?auto=format&fit=crop&q=80&w=1000')] bg-cover bg-center mix-blend-luminosity opacity-60"
-                whileHover={{ scale: 1.15, opacity: 0.8 }}
-                transition={{ duration: 0.7 }}
-              />
-              <div className="absolute inset-0 flex items-center justify-center z-20">
-                <span className="font-heading text-3xl font-black tracking-widest text-white drop-shadow-lg">BN.</span>
-              </div>
-            </motion.div>
+            {/* Icon Cloud */}
+            <div className="relative z-10 w-full h-full flex items-center justify-center cursor-pointer">
+              <IconCloud images={slugs.map((slug) => `https://cdn.simpleicons.org/${slug}/${slug}`)} />
+            </div>
           </motion.div>
 
           {/* Floating Cards */}

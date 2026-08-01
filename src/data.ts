@@ -21,15 +21,23 @@ import {
 
 export const BRAND = {
   name: "Bilal Nainia",
+  arabicName: "بلال انعينيعة",
   title: "Full Stack Developer",
-  roles: ["MERN Stack Engineer", "AI Prompt Engineer"],
+  roles: ["MERN Stack Engineer", "UI/UX Designer", "AI Prompt Engineer"],
   slogan: "Crafting Premium Digital Experiences Through Code & Design",
+  location: "Casablanca, Morocco",
+  email: "nainiabilal@gmail.com",
+  github: "https://github.com/nainia-bilal",
+  whatsapp: "+212 687755912"
 };
 
 export const PROJECTS = [
   {
     title: "MediConnect",
     description: "A comprehensive healthcare platform connecting patients with medical professionals.",
+    challenge: "Fragmented communication between patients and doctors leading to inefficient care.",
+    solution: "Developed a real-time telemedicine platform with secure messaging and video consultations.",
+    result: "Reduced average response time by 40% and served over 10,000 active users.",
     tech: ["React", "Node.js", "MongoDB", "Express", "Socket.io"],
     liveUrl: "#",
     githubUrl: "#",
@@ -39,6 +47,9 @@ export const PROJECTS = [
   {
     title: "MC Victori",
     description: "Premium digital experience for a luxury lifestyle brand.",
+    challenge: "The brand lacked a digital presence that reflected its high-end physical products.",
+    solution: "Designed and built an immersive, animation-driven e-commerce experience.",
+    result: "Increased online conversion rates by 25% within the first quarter.",
     tech: ["Next.js", "TypeScript", "Tailwind CSS", "Framer Motion"],
     liveUrl: "#",
     githubUrl: "#",
@@ -48,6 +59,9 @@ export const PROJECTS = [
   {
     title: "Luxury Portfolio",
     description: "Award-winning creative portfolio with WebGL and advanced animations.",
+    challenge: "Standing out in a saturated market of standard template portfolios.",
+    solution: "Implemented custom WebGL shaders and complex GSAP scroll animations for a unique identity.",
+    result: "Featured on multiple design award sites and increased inbound client leads.",
     tech: ["React", "Three.js", "GSAP", "Tailwind CSS"],
     liveUrl: "#",
     githubUrl: "#",
@@ -57,6 +71,9 @@ export const PROJECTS = [
   {
     title: "Perfume E-commerce",
     description: "High-end e-commerce platform for boutique fragrances.",
+    challenge: "Creating a sensory experience for a product that relies heavily on smell.",
+    solution: "Utilized rich visuals, detailed scent profiles, and smooth transitions to evoke emotion.",
+    result: "Achieved a 30% reduction in bounce rate and higher average order value.",
     tech: ["React", "Redux", "Node.js", "Stripe", "MongoDB"],
     liveUrl: "#",
     githubUrl: "#",
@@ -69,36 +86,68 @@ export const SKILLS = [
   { 
     category: "Frontend", 
     items: [
-      { name: "React", icon: Code2 },
-      { name: "TypeScript", icon: FileJson },
-      { name: "Next.js", icon: Globe },
-      { name: "Tailwind CSS", icon: Paintbrush },
-      { name: "Framer Motion", icon: Layout },
-      { name: "GSAP", icon: TerminalSquare }
+      { name: "HTML5", slug: "html5" },
+      { name: "CSS3", slug: "css3" },
+      { name: "JavaScript", slug: "javascript" },
+      { name: "TypeScript", slug: "typescript" },
+      { name: "React 19", slug: "react" },
+      { name: "Next.js", slug: "nextdotjs" },
+      { name: "Tailwind CSS", slug: "tailwindcss" },
+      { name: "Framer Motion", slug: "framer" },
+      { name: "GSAP", slug: "greensock" }
     ] 
   },
   { 
     category: "Backend", 
     items: [
-      { name: "Node.js", icon: Server },
-      { name: "Express", icon: Network },
-      { name: "MongoDB", icon: Database },
-      { name: "PostgreSQL", icon: Database },
-      { name: "REST APIs", icon: Cloud },
-      { name: "GraphQL", icon: Layers }
+      { name: "Node.js", slug: "nodedotjs" },
+      { name: "Express", slug: "express" },
+      { name: "PHP", slug: "php" },
+      { name: "Laravel", slug: "laravel" },
+      { name: "Ruby", slug: "ruby" },
+      { name: "Ruby on Rails", slug: "rubyonrails" },
+      { name: "Go", slug: "go" },
+      { name: "Rust", slug: "rust" },
+      { name: "Swift", slug: "swift" },
+      { name: "Kotlin", slug: "kotlin" },
+      { name: "Java", slug: "openjdk" },
+      { name: "C++", slug: "cplusplus" },
+      { name: "MongoDB", slug: "mongodb" },
+      { name: "PostgreSQL", slug: "postgresql" },
+      { name: "MySQL", slug: "mysql" },
+      { name: "GraphQL", slug: "graphql" }
     ] 
   },
   { 
-    category: "Tools & AI", 
+    category: "Data & AI", 
     items: [
-      { name: "Git", icon: GitBranch },
-      { name: "Docker", icon: Container },
-      { name: "AWS", icon: CloudLightning },
-      { name: "AI Prompt Engineering", icon: Sparkles },
-      { name: "OpenAI API", icon: Bot },
-      { name: "Gemini API", icon: BrainCircuit }
+      { name: "Python", slug: "python" },
+      { name: "OpenCV", slug: "opencv" },
+      { name: "Pandas", slug: "pandas" },
+      { name: "TensorFlow", slug: "tensorflow" },
+      { name: "OpenAI API", slug: "openai" },
+      { name: "Gemini API", slug: "googlegemini" }
+    ]
+  },
+  { 
+    category: "DevOps & Cloud", 
+    items: [
+      { name: "Git", slug: "git" },
+      { name: "Docker", slug: "docker" },
+      { name: "AWS", slug: "amazonwebservices" },
+      { name: "Linux", slug: "linux" },
+      { name: "Vercel", slug: "vercel" }
     ] 
   },
+  {
+    category: "Design",
+    items: [
+      { name: "Figma", slug: "figma" },
+      { name: "Sketch", slug: "sketch" },
+      { name: "Framer", slug: "framer" },
+      { name: "Webflow", slug: "webflow" }
+    ]
+  }
 ];
 
 export const EXPERIENCE = [
@@ -120,4 +169,19 @@ export const EXPERIENCE = [
     period: "2019 - 2021",
     description: "Crafted award-winning digital experiences with focus on animation, responsive design, and modern web standards.",
   },
+];
+
+export const EDUCATION = [
+  {
+    degree: "Master's in Computer Science",
+    institution: "Tech University",
+    period: "2017 - 2019",
+    description: "Specialized in Software Engineering and Artificial Intelligence. Graduated with honors.",
+  },
+  {
+    degree: "Bachelor's in Information Technology",
+    institution: "State University",
+    period: "2013 - 2017",
+    description: "Foundational studies in programming, database management, and system architecture.",
+  }
 ];

@@ -1,61 +1,105 @@
-import { useRef } from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { useState, useRef } from "react";
+import { motion, useScroll, useTransform, AnimatePresence } from "framer-motion";
 import { SKILLS } from "../data";
+import { cn } from "../lib/utils";
 
 export const Skills = () => {
+  const [activeCategory, setActiveCategory] = useState<string>("All");
+
+  const categories = ["All", ...SKILLS.map(s => s.category)];
+  
+  const allSkills = SKILLS.flatMap(group => 
+    group.items.map(item => ({ ...item, category: group.category }))
+  );
+
+  const filteredSkills = activeCategory === "All" 
+    ? allSkills 
+    : allSkills.filter(s => s.category === activeCategory);
+
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
-
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100]);
+  
+  const y = useTransform(scrollYProgress, [0, 1], [50, -50]);
 
   return (
-    <section id="skills" ref={containerRef} className="py-32 relative">
-      <div className="container mx-auto px-6">
-        <motion.div style={{ y }} className="max-w-5xl mx-auto">
-          <div className="flex items-center gap-4 mb-16">
-            <div className="w-12 h-px bg-brand-light" />
-            <h2 className="text-brand-light font-medium uppercase tracking-widest text-sm">Technical Arsenal</h2>
+    <section id="skills" ref={containerRef} className="py-32 relative overflow-hidden">
+      <div className="container mx-auto px-6 relative z-10">
+        <motion.div style={{ y }} className="max-w-4xl mx-auto">
+          <header className="mb-10 text-center flex flex-col items-center">
+            <div className="flex items-center gap-4 mb-4">
+              <div className="w-12 h-px bg-purple-500/50" />
+              <h2 className="text-purple-400 font-medium uppercase tracking-widest text-[10px]">Capabilities</h2>
+              <div className="w-12 h-px bg-purple-500/50" />
+            </div>
+            
+            <h2 className="text-4xl md:text-6xl font-heading font-semibold tracking-tight mb-4 text-white">
+              Technical <span className="font-serif italic font-light text-white/90">Arsenal</span>
+            </h2>
+          </header>
+
+          <div className="mb-14 flex flex-wrap justify-center gap-2">
+            {categories.map((cat) => (
+              <button
+                key={cat}
+                onClick={() => setActiveCategory(cat)}
+                className={cn(
+                  "rounded-full border px-4 py-1.5 font-mono text-xs transition-colors cursor-pointer",
+                  activeCategory === cat
+                    ? "border-white bg-white text-black"
+                    : "border-white/10 bg-white/5 text-white/50 hover:text-white"
+                )}
+              >
+                {cat}
+              </button>
+            ))}
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
-            {SKILLS.map((skillGroup, groupIdx) => (
-              <div key={groupIdx} className="flex flex-col gap-6">
-                <motion.h3 
-                  initial={{ opacity: 0, x: -20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: groupIdx * 0.2 }}
-                  className="text-2xl font-heading font-medium text-white"
-                >
-                  {skillGroup.category}
-                </motion.h3>
-                <div className="flex flex-col gap-3">
-                  {skillGroup.items.map((skill, i) => {
-                    const Icon = skill.icon;
-                    return (
-                      <motion.div
-                        key={i}
-                        initial={{ opacity: 0, y: 10 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 0.3, delay: (groupIdx * 0.2) + (i * 0.1) }}
-                        className="group relative flex items-center gap-4 p-4 glass-panel rounded-xl overflow-hidden"
-                      >
-                        <div className="absolute inset-0 bg-gradient-to-r from-brand/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                        <div className="relative z-10 p-2 bg-white/5 rounded-lg group-hover:bg-brand/20 transition-colors">
-                          <Icon size={18} className="text-white/60 group-hover:text-brand-light transition-colors" />
-                        </div>
-                        <span className="relative z-10 text-white/80 group-hover:text-white transition-colors">{skill.name}</span>
-                        <div className="relative z-10 ml-auto w-2 h-2 rounded-full bg-white/20 group-hover:bg-brand-light transition-colors" />
-                      </motion.div>
-                    );
-                  })}
-                </div>
-              </div>
-            ))}
+          <div className="relative mx-auto max-w-4xl [perspective:1200px]">
+            {/* Glowing dome background */}
+            <div 
+              className="pointer-events-none absolute top-1/2 left-1/2 h-72 w-[110%] md:w-full -translate-x-1/2 -translate-y-1/2 rounded-[50%] opacity-30 blur-3xl"
+              style={{
+                background: "conic-gradient(from 0deg, #ff5f9e, #a78bfa, #38bdf8, #34d399, #fbbf24, #fb7185, #ff5f9e)"
+              }}
+            />
+            
+            <motion.ul 
+              layout
+              className="relative flex flex-wrap justify-center gap-3 z-10"
+            >
+              <AnimatePresence mode="popLayout">
+                {filteredSkills.map((skill, idx) => {
+                  return (
+                    <motion.li
+                      layout
+                      initial={{ opacity: 0, scale: 0.8 }}
+                      animate={{ opacity: 1, scale: 1 }}
+                      exit={{ opacity: 0, scale: 0.8 }}
+                      transition={{ duration: 0.3, delay: idx * 0.03 }}
+                      key={skill.name}
+                      className="list-none"
+                    >
+                      <div className="group flex h-24 w-24 flex-col items-center justify-center gap-2 rounded-2xl border border-white/10 bg-black/40 shadow-lg backdrop-blur-md transition-all duration-300 hover:border-white/30 hover:bg-white/10 hover:shadow-xl hover:-translate-y-1">
+                        <img 
+                          src={`https://cdn.simpleicons.org/${skill.slug}`} 
+                          alt={skill.name} 
+                          width={32} 
+                          height={32} 
+                          loading="lazy" 
+                          className="h-8 w-8 transition-all duration-300 hover:scale-110" 
+                        />
+                        <span className="px-1 text-center font-mono text-[10px] leading-tight text-white/50 transition-colors group-hover:text-white">
+                          {skill.name}
+                        </span>
+                      </div>
+                    </motion.li>
+                  );
+                })}
+              </AnimatePresence>
+            </motion.ul>
           </div>
         </motion.div>
       </div>

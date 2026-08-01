@@ -1,0 +1,365 @@
+
+Oussama Ezitouni — Senior Full-Stack Engineer
+Senior full-stack
+Engineer.
+Morocco · Available for freelance
+Oussama
+Ezitouni
+Available for freelance:
+ezitounioussama@gmail.com
+React · Next.js · GSAP
+Node · Symfony · Laravel
+Download CV ↓
+Home
+Experience
+About
+Stack
+Contact
+I&#x27;m a Morocco-based
+ 
+senior full-stack engineer
+ 
+and DevOps architect. I started in the backend and grew into
+ 
+creating fast, expressive 3D web experiences
+ 
+on the frontend.
+Local time
+—
+GitHub
+LinkedIn
+© 
+2026
+Oussama Ezitouni
+Experience
+The journey so far
+Scroll to travel
+⟶
+2023
+2023 — Now
+Senior Software Engineer &amp; Technical Lead
+Intelcia Tech · Rabat
+The engineer teams call when it matters — I own the platform end to end: architecture, data, APIs, frontend, pipelines. Millions of users, 50+ institutions.
+Rebuilt enterprise frontends in React / Next.js / TypeScript — 40% faster loads, load-tested to 10× the previous traffic capacity.
+Modernized national-scale PHP (Symfony, PRADO) and Node.js (NestJS, Fastify) backends with zero-downtime, blue-green style rollouts.
+React
+Next.js
+TypeScript
+Symfony
+PRADO
+Docker
+MSc
+2023 — 2024
+Instructor — International M.Sc. Computer Science
+Woolf University (EU) · Remote
+Teach software engineering to an international master&#x27;s cohort — the same architecture, testing, and system-design practices I use in production every day.
+Supervise student projects from first commit to defended thesis.
+Wrote the course material on modern web engineering: React, APIs, databases, and DevOps.
+Software Architecture
+Web Engineering
+Mentorship
+2022
+2022 — Now
+Freelance Full-Stack Engineer
+Independent · Morocco
+Shipped 12+ web &amp; mobile products: Nlivrilik (logistics), Aksam Assurance (insurance), Paylik (fintech), HoussniJob (recruitment), Ibn Tofail University (education).
+Nlivrilik: real-time last-mile delivery with GPS tracking, driver routing, and multi-role dashboards (Next.js, Node.js, PostgreSQL).
+Every project is mine end to end: architecture, database, APIs, UI, deployment.
+Maintain gotodev, a developer CLI with 100+ weekly npm downloads.
+nlivrilik.ma
+ ↗
+gotodev on npm
+ ↗
+Next.js
+Vue.js
+Laravel
+React Native
+PostgreSQL
+Redis
+DATA
+2023 — 2024
+Data Science Instructor
+GoMyCode · Rabat
+Taught Data Science &amp; ML to cohorts of 5–10 — from their first notebook to working predictive models.
+Built a hands-on curriculum around real datasets, not toy examples.
+Python
+Pandas
+Scikit-learn
+Data Viz
+TALK
+2022 — Now
+Talks, writing &amp; community
+Morocco &amp; remote
+Internal engineering talks at Intelcia — from taming legacy PHP to shipping motion without killing performance.
+Mentor and jury at student hackathons around Rabat.
+Technical writer on DEV.to since 2022 — 120+ public repos on GitHub.
+Speaking
+Writing
+Hackathons
+EDU
+Education
+M.Sc. Computer Science · MIAGE
+Woolf University (EU) · Université Mohammed V
+M.Sc. Computer Science (Bac+5) — Woolf University, EU-accredited (in progress).
+Licence MIAGE (European Bachelor) &amp; DUT MIAGE — Université Mohammed V, Rabat.
+Certified: JavaScript (Orange), ALX Software Engineering &amp; Data Science, Hedera Blockchain Developer.
+Woolf University
+MIAGE
+ALX
+Hedera
+About
+About
+I&#x27;m Oussama.
+A
+ 
+senior full-stack engineer
+ 
+at
+ 
+Intelcia Tech
+.
+Software
+ 
+engineer
+ 
+and
+ 
+data
+ 
+scientist
+ 
+at
+ 
+heart
+ 
+—
+ 
+for
+ 
+the
+ 
+past
+ 
+3
+ 
+years
+ 
+at
+ 
+Intelcia
+ 
+Tech
+ 
+I&#x27;ve
+ 
+been
+ 
+the
+ 
+engineer
+ 
+who
+ 
+touches
+ 
+everything:
+ 
+architecture,
+ 
+backends,
+ 
+frontends,
+ 
+and
+ 
+the
+ 
+pipelines
+ 
+that
+ 
+keep
+ 
+them
+ 
+honest,
+ 
+on
+ 
+platforms
+ 
+serving
+ 
+millions
+ 
+of
+ 
+users.
+ 
+On
+ 
+the
+ 
+side
+ 
+I
+ 
+ship
+ 
+freelance
+ 
+products,
+ 
+teach
+ 
+an
+ 
+international
+ 
+master&#x27;s
+ 
+cohort
+ 
+at
+ 
+Woolf
+ 
+University,
+ 
+and
+ 
+write
+ 
+about
+ 
+all
+ 
+of
+ 
+it
+ 
+on
+ 
+DEV.to.
+ 
+Available for freelance
+ ·
+ezitounioussama@gmail.com
+Download CV ↓
+Writing on DEV.to
+gotodev on npm
+React
+PHP
+Python · ML
+DevOps
+3
++
+Years building
+12
++
+Apps shipped
+50
++
+Institutions served
+120
++
+Public repos
+End-to-end ownership
+From requirements and system design to deployment and optimization — I own the full SDLC, not just a slice of it.
+Performance obsessed
+40% faster loads and 10× traffic capacity on enterprise platforms. Speed is a feature, and I treat it like one.
+Teach &amp; multiply
+From data science cohorts at GoMyCode to master&#x27;s students at Woolf University — plus 5+ engineers mentored at work. Knowledge shared is leverage gained.
+Stack
+Tech 
+stack
+The tools I reach for — across the JavaScript and PHP worlds, data science, and the infrastructure underneath.
+All
+JavaScript
+PHP
+Data Science
+Databases
+DevOps &amp; Cloud
+JavaScript
+TypeScript
+React
+Next.js
+Vue.js
+Angular
+Svelte
+Node.js
+NestJS
+Express
+Fastify
+GSAP
+Tailwind
+GraphQL
+Jest
+Cypress
+PHP
+Symfony
+PR
+PRADO
+Laravel
+Python
+Pandas
+NumPy
+Scikit-learn
+TensorFlow
+PostgreSQL
+MySQL
+MongoDB
+Redis
+Elasticsearch
+Firebase
+Docker
+Kubernetes
+GitHub Actions
+GitLab CI
+Jenkins
+Nginx
+Terraform
+Prometheus
+Grafana
+Linux
+Git
+Bash
+Contact
+Let&#x27;s build something.
+Have a project in mind? Send a note and I&#x27;ll reply within a couple of days — or reach me directly at
+ 
+ezitounioussama@gmail.com
+.
+I take on
+ 
+full-stack builds
+,
+ 
+architecture reviews
+, and 
+performance audits
+ 
+— for startups and enterprise teams, remote or from Rabat.
+“Oussama is the engineer we hand the hardest problems to — he owns them from architecture to the last deploy.”
+— Engineering Manager, Intelcia Tech
+Name
+Email
+Message
+Send message
+GitHub
+LinkedIn
+© 
+2026
+ 
+Oussama Ezitouni
+ ·
+ 
+Kenitra / Rabat, Morocco
+Built with Next.js · GSAP · Lenis
+Home
+Experience
+About
+Stack
+Contact
+GitHub
+Toggle theme
